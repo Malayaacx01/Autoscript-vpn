@@ -50,8 +50,8 @@ export Server_IP="underfined"
 export Script_Mode="Stable"
 export Auther=".geovpn"
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
-Name=$(curl -sS https://raw.githubusercontent.com/Pakhaji30/Autoscript-vpn/main/izin | grep $MYIP | awk '{print $2}')
-Exp=$(curl -sS https://raw.githubusercontent.com/Pakhaji30/Autoscript-vpn/main/izin | grep $MYIP | awk '{print $3}')
+Name=$(curl -sS https://raw.githubusercontent.com/kanghory/Autoscript-vpn/main/izin | grep $MYIP | awk '{print $2}')
+Exp=$(curl -sS https://raw.githubusercontent.com/kanghory/Autoscript-vpn/main/izin | grep $MYIP | awk '{print $3}')
 
 # // Root Checking
 if [ "${EUID}" -ne 0 ]; then
