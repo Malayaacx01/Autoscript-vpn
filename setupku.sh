@@ -216,7 +216,7 @@ rm -f setupku.sh
 rm -f xraymode.sh
 rm -f slowdns.sh
 
-echo "===============-[ Kang Hory VPN PREMIUM ]-================"
+echo "===============-[ Malayaacx01 - VPN PREMIUM ]-================"
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -258,11 +258,11 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Credit By Kang Hory ]-==============="
+echo "===============-[ Script Modded Credit By Malayaacx01 - VPN ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
-echo "ADIOS"
+echo "Powered By Malayaacx01-OS"
 sleep 1
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
 read answer
