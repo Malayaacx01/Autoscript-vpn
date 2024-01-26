@@ -176,12 +176,14 @@ menu-vless
 fi
 }
 
+domain=$(cat /etc/xray/domain)
 function cekvless(){
 clear
+
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sort | uniq`);
+data=( `cat /etc/xray/config.json | grep '#&' | cut -d ' ' -f 2 | sort | uniq`);
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}            • VLESS USER ONLINE •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • CHECK VLESS USER •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 
@@ -238,136 +240,140 @@ echo -e "$COLOR1┌────────────────────�
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-
-read -rp "   Input Username : " -e user
       
-if [ -z $user ]; then
-echo -e "$COLOR1│${NC} [Error] Username cannot be empty "
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}             • Malayaacx01 - VPN •             $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo ""
-read -n 1 -s -r -p "   Press any key to back on menu"
-menu
-fi
-		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
-
-		if [[ ${CLIENT_EXISTS} == '1' ]]; then
+domain=$(cat /etc/xray/domain)
 clear
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}            • CREATE VLESS USER •              ${NC} $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} Please choose another name."
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}             • Malayaacx01 - VPN •             $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-			read -n 1 -s -r -p "   Press any key to back on menu"
-menu
-		fi
-	done
+until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
+  echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+  echo -e "$COLOR1│${NC}             • CREATE VLESS USER •              ${NC} $COLOR1│$NC"
+  echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+  echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 
+  read -rp "User: " -e user
+  CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
+
+  if [[ ${CLIENT_EXISTS} == '1' ]]; then
+    clear
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "\E[0;41;36m             VLESS ACCOUNT           \E[0m"
+    echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo ""
+    echo "A client with the specified name was already created, please choose another name."
+    echo ""
+    echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
+    echo -e "$COLOR1│${NC}             • Malayaacx01 - VPN •             $COLOR1│$NC"
+    echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+    read -n 1 -s -r -p "Press any key to back on menu"
+    menu		
+  fi
+done
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "   Expired (days): " masaaktif
-exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#vless$/a\### '"$user $exp"'\
-},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#vlessgrpc$/a\### '"$user $exp"'\
-},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-asu=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vless",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls"
-}
-EOF`
-ask=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "80",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vless",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "none"
-}
-EOF`
-grpc=`cat<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "443",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "grpc",
-      "path": "vless-grpc",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "tls"
-}
-EOF`
-vless_base641=$( base64 -w 0 <<< $vless_json1)
-vless_base642=$( base64 -w 0 <<< $vless_json2)
-vless_base643=$( base64 -w 0 <<< $vless_json3)
-vlesslink1="vless://$(echo $asu | base64 -w 0)"
-vlesslink2="vless://$(echo $ask | base64 -w 0)"
-vlesslink3="vless://$(echo $grpc | base64 -w 0)"
-systemctl restart xray > /dev/null 2>&1
-service cron restart > /dev/null 2>&1
-clear
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}            • CREATE VLESS USER •              ${NC} $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} Remarks       : ${user}"
-echo -e "$COLOR1 ${NC} Expired On    : $exp" 
-echo -e "$COLOR1 ${NC} Domain        : ${domain}" 
-echo -e "$COLOR1 ${NC} Port TLS      : ${tls}" 
-echo -e "$COLOR1 ${NC} Port none TLS : ${none}" 
-echo -e "$COLOR1 ${NC} Port  GRPC    : ${tls}" 
-echo -e "$COLOR1 ${NC} id            : ${uuid}" 
-echo -e "$COLOR1 ${NC} alterId       : 0" 
-echo -e "$COLOR1 ${NC} Security      : auto" 
-echo -e "$COLOR1 ${NC} Network       : ws" 
-echo -e "$COLOR1 ${NC} Path          : /vless" 
-echo -e "$COLOR1 ${NC} Path WSS      : wss://bug.com/vless" 
-echo -e "$COLOR1 ${NC} ServiceName   : vless-grpc" 
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1 ${NC} Link TLS : "
-echo -e "$COLOR1 ${NC} ${vlesslink1}" 
-echo -e "$COLOR1 ${NC} "
-echo -e "$COLOR1 ${NC} Link none TLS : "
-echo -e "$COLOR1 ${NC} ${vlesslink2}" 
-echo -e "$COLOR1 ${NC} "
-echo -e "$COLOR1 ${NC} Link GRPC : "
-echo -e "$COLOR1 ${NC} ${vlesslink3}"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}             • Malayaacx01 - VPN •             $COLOR1│$NC"
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo ""
+read -p "Expired (days): " masaaktif
+exp=$(date -d "$masaaktif days" +"%Y-%m-%d")
+sed -i '/#vless$/a\#& '"$user $exp"'\
+},{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
+},{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 
-read -n 1 -s -r -p "   Press any key to back on menu"
+vlesslink1="vless://${uuid}@${domain}:443?path=/vless&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&type=ws#${user}"
+vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${domain}#${user}"
+
+cat >/var/www/html/vless-$user.txt <<-END
+
+# Format Vless WS TLS
+
+- name: Vless-$user-WS TLS
+  server: ${domain}
+  port: 443
+  type: vless
+  uuid: ${uuid}
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: ${domain}
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: ${domain}
+
+# Format Vless WS Non TLS
+
+- name: Vless-$user-WS (CDN) Non TLS
+  server: ${domain}
+  port: 80
+  type: vless
+  uuid: ${uuid}
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  servername: ${domain}
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: ${domain}
+  udp: true
+
+# Format Vless gRPC (SNI)
+
+- name: Vless-$user-gRPC (SNI)
+  server: ${domain}
+  port: 443
+  type: vless
+  uuid: ${uuid}
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: ${domain}
+  network: grpc
+  grpc-opts:
+  grpc-mode: gun
+  grpc-service-name: vless-grpc
+  udp: true
+
+-------------------------------------------------------
+              Link Akun Vless 
+-------------------------------------------------------
+Link TLS      : ${vlesslink1}
+-------------------------------------------------------
+Link none TLS : ${vlesslink2}
+-------------------------------------------------------
+Link GRPC     : ${vlesslink3}
+-------------------------------------------------------
+
+END
+
+systemctl restart xray
+systemctl restart nginx
+
+clear
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "    Xray/Vless Account     \E[0m" | tee -a /root/akun/vless/$user.txt
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "Remarks     : ${user}" | tee -a /root/akun/vless/$user.txt
+echo -e "Domain      : ${domain}" | tee -a /root/akun/vless/$user.txt
+echo -e "port TLS    : 443" | tee -a /root/akun/vless/$user.txt
+echo -e "Port DNS    : 443" | tee -a /root/akun/vless/$user.txt
+echo -e "Port NTLS   : 80" | tee -a /root/akun/vless/$user.txt
+echo -e "User ID     : ${uuid}" | tee -a /root/akun/vless/$user.txt
+echo -e "Encryption  : none" | tee -a /root/akun/vless/$user.txt
+echo -e "Path TLS    : /vless " | tee -a /root/akun/vless/$user.txt
+echo -e "ServiceName : vless-grpc" | tee -a /root/akun/vless/$user.txt
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "Link TLS    : ${vlesslink1}" | tee -a /root/akun/vless/$user.txt
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "Link NTLS   : ${vlesslink2}" | tee -a /root/akun/vless/$user.txt
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "Link GRPC   : ${vlesslink3}" | tee -a /root/akun/vless/$user.txt
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "Expired On : $exp" | tee -a /root/akun/vless/$user.txt
+echo -e "$COLOR1─────────────────────────────────────────────────${NC}" | tee -a /root/akun/vless/$user.txt
+echo -e "" | tee -a /root/akun/vless/$user.txt
+read -n 1 -s -r -p "Press any key to back on menu"
 menu-vless
 }
-
 
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
