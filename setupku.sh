@@ -79,7 +79,7 @@ echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 sudo at install squid -y
 sudo apt install net-tools -y
 sudo apt install vnstat -y
-wget -q https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 # izin
