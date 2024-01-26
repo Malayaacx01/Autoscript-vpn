@@ -20,7 +20,7 @@ commonname=none
 email=agunxz@themoon.my,id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/andristji/Xray-SSH/main/password.txt"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/kanghoryVPN/Autoscript-by-azi/main/Insshws/password.txt"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -129,7 +129,7 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/andristji/Xray-SSH/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kanghoryVPN/Autoscript-by-azi/main/configuration/nginx.conf"
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
@@ -264,7 +264,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 
 
 #install bbr dan optimasi kernel
-#wget https://raw.githubusercontent.com/apih46/mini/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#wget https://alist.cloudservertech.my.id/d/Onedrive/Files/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
