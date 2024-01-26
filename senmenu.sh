@@ -36,11 +36,11 @@ wget -q -O /usr/bin/changer "https://raw.githubusercontent.com/Azigaming404/Auto
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/xp.sh"
 wget -q -O /usr/bin/addhost  "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/addhost.sh"
 wget -q -O /usr/bin/genssl  "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/genssl.sh"
-wget -q -O /usr/bin/fix "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/cf.sh"
+wget -q -O /usr/bin/fix "https://github.com/Malayaacx01/Autoscript-vpn-V1/raw/main/cf.sh"
 #wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/update.sh"
 wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/issue.net"
 wget -q -O /root/versi "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/versibasic"
-wget -q -O /usr/bin/updatsc "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/update.sh"
+#wget -q -O /usr/bin/updatsc "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/update.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/menu-backup.sh"
 wget https://github.com/KhaiVpn767/multiport/raw/main/install/set-br.sh
 bash set-br.sh
@@ -68,7 +68,7 @@ chmod +x /usr/bin/limit-speed
 chmod +x /usr/bin/menu-vless
 chmod +x /usr/bin/menu-vmess
 chmod +x /usr/bin/menu-ss
-chmod +x /usr/bin/updatsc
+#chmod +x /usr/bin/updatsc
 #chmod +x /usr/bin/menu-socks
 chmod +x /usr/bin/menu-trojan
 #chmod +x /usr/bin/menu-trgo
