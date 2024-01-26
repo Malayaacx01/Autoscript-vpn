@@ -97,15 +97,15 @@ CEKEXPIRED () {
         today=$(date -d +1day +%Y -%m -%d)
         Exp1=$(curl -sS https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/izin | grep $MYIP | awk '{print $3}')
         if [[ $today < $Exp1 ]]; then
-        echo "status script aktif.."
+        echo "status script active.."
         else
-        echo "SCRIPT ANDA EXPIRED";
+        echo "Your Script Is Expired - Please Contact Admin To Active";
         exit 0
 fi
 }
 IZIN=$(curl -sS https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/izin | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
-echo "IZIN DI TERIMA!!"
+echo "Permission Accepted!!"
 CEKEXPIRED
 else
 echo "Permission Denied!! Please Contact Admin To Access VPS Register IP!!";
