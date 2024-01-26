@@ -8,7 +8,7 @@ wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/Malayaacx01/Auto
 #wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-socks.sh"
 wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/vless/add-vless.sh"
 wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/Trojan/add-tr.sh"
-wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/add-trgo.sh"
+#wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/add-trgo.sh"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/restart.sh"
 wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/tendang.sh"
