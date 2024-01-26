@@ -8,6 +8,11 @@
   ```html
 wa.me/+601165082601 & https://t.me/Malayaacx_2601
   ```
+## Link Script Installation - By Malayaacx01 - VPN<br>
+  
+  ```html
+  
+ ```
 ## Fitur:
 <br>
 ✅ SSH WEBSOCKET TLS & NON-TLS 443/80 MULTIPATH<br>
