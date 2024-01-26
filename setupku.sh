@@ -1,13 +1,13 @@
 #!/bin/bash
 # // script credit by Malayaacx01 - VPN
 # // ini adalah script autoinstall ssh multiport untuk instalasi vpn server dan tunneling service
-MYIP=$(curl -sS ipv4.icanhazip.com)
-red='\e[1;31m'
-green='\e[0;32m'
-yell='\e[1;33m'
-tyblue='\e[1;36m'
-NC='\e[0m'
-
+if [ "${EUID}" -ne 0 ]; then
+		echo "You need to run this script as root"
+		exit 1
+fi
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+		echo "OpenVZ is not supported"
+		exit 1
 fi
 red='\e[1;31m'
 green='\e[0;32m'
@@ -46,6 +46,13 @@ fi
 clear
 echo -e "\e[32mloading...\e[0m"
 clear
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+red='\e[1;31m'
+green='\e[0;32m'
+yell='\e[1;33m'
+tyblue='\e[1;36m'
+NC='\e[0m'
 
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
