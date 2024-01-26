@@ -148,7 +148,7 @@ cd /usr/bin
 wget -O xp "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/xp.sh"
 chmod +x xp
 sleep 1
-wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
+wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/Menu%20Final/Lain/notramcpu" && chmod +x /usr/bin/notramcpu
 
 cd
 #remove log 
