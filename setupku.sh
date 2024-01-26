@@ -1,5 +1,5 @@
 #!/bin/bash
-# // script credit by CyberVPN
+# // script credit by Malayaacx01 - VPN
 # // ini adalah script autoinstall ssh multiport untuk instalasi vpn server dan tunneling service
 MYIP=$(curl -sS ipv4.icanhazip.com)
 red='\e[1;31m'
@@ -7,6 +7,45 @@ green='\e[0;32m'
 yell='\e[1;33m'
 tyblue='\e[1;36m'
 NC='\e[0m'
+
+fi
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+#IZIN SCRIPT
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo -e ""
+echo -e "\e[94m              .-----------------------------------------------.    "
+echo -e "\e[94m              |     Installing Autoscript - Premium Begin     |    "
+echo -e "\e[94m              '-----------------------------------------------'    "
+echo -e "\e[0m"
+echo ""
+sleep 1
+# Insert Password
+Password=Malayaacx01-VPN
+# Execute
+read -p "Please Insert The License Key : " Passwordnya
+if [ $Password = $Passwordnya ]; then
+clear
+echo -e ""
+echo -e "${green}Permission Accepted...${NC}"
+echo ""
+echo "Thanks For Using This Autoscript-Premium By Malayaacx01 - VPN"
+echo ""
+sleep 3
+else
+clear
+echo -e "${red}Permission Denied!${NC}";
+echo -e "${red}Please Insert The Correct License Key !${NC}"
+echo ""
+echo -e "Please Contact ${green}Admin${NC}"
+echo -e "Telegram : t.me/Malayaacx_2601"
+rm -f setup2.sh
+exit 0
+fi
+clear
+echo -e "\e[32mloading...\e[0m"
+clear
 
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
