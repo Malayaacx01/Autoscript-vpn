@@ -6,8 +6,8 @@ wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Malayaacx01/Autoscri
 wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/vmess/add-ws.sh"
 wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/ssws/add-ssws.sh"
 #wget -q -O /usr/bin/add-socks "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/add-socks.sh"
-wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/add-vless.sh"
-wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/add-tr.sh"
+wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/vless/add-vless.sh"
+wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/Trojan/add-tr.sh"
 wget -q -O /usr/bin/add-trgo "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/add-trgo.sh"
 wget -q -O /usr/bin/autoreboot "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/autoreboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/restart.sh"
@@ -18,7 +18,7 @@ wget -q -O /usr/bin/cek-trafik "https://raw.githubusercontent.com/Azigaming404/A
 wget -q -O /usr/bin/cek-speed "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/speedtes_cli.py"
 wget -q -O /usr/bin/cek-bandwidth "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/cek-bandwidth.sh"
 wget -q -O /usr/bin/cek-ram "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/ram.sh"
-wget -q -O /usr/bin/limit-speed "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/limit-speed.sh"
+wget -q -O /usr/bin/limit-speed "https://github.com/Malayaacx01/Autoscript-vpn-V1/raw/main/limit-speed.sh"
 wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/menu-vless.sh"
 wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/kanghory/Autoscript-vpn/main/menu-vmess.sh"
 #wget -q -O /usr/bin/menu-socks "https://raw.githubusercontent.com/Agunxzzz/XrayCol/main/minacantik/menu-socks.sh"
@@ -42,7 +42,7 @@ wget -q -O /etc/issue.net "https://raw.githubusercontent.com/Azigaming404/Autosc
 wget -q -O /root/versi "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/versibasic"
 wget -q -O /usr/bin/updatsc "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/update.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/menu-backup.sh"
-wget https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/backup/set-br.sh
+wget https://github.com/KhaiVpn767/multiport/raw/main/install/set-br.sh
 bash set-br.sh
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu
