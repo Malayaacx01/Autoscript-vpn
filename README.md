@@ -6,14 +6,12 @@
 ## Installation Link<br>
 
   ```html
-  wa.me/+601165082601 & https://t.me/Malayaacx_2601
-  ```
+ wa.me/+601165082601 & https://t.me/Malayaacx_2601
+ ```
 ## Link Script Installation - By Malayaacx01 - VPN<br>
   
   ```html
- sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip 
- coreutils screen curl && https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/setupku.sh && chmod +x setupku.sh && 
- ./setupku.sh 
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && https://raw.githubusercontent.com/Malayaacx01/Autoscript-vpn/main/setupku.sh && chmod +x setupku.sh && ./setupku.sh 
  ```
 ## Fitur:
 <br>
