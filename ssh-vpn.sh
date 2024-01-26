@@ -129,20 +129,20 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kanghoryVPN/Autoscript-by-azi/main/configuration/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://alist.cloudservertech.my.id/d/Onedrive/Files/Autoscript%20Modded%20By%20Malayaacx01%20-%20VPN/nginx.conf"
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
 cd
-wget -O /usr/bin/badvpn-udpgw https://github.com/andristji/Xray-SSH/main/badvpn/badvpn-udpgw && chmod +x  /usr/bin/badvpn-udpgw
+wget -O /usr/bin/badvpn-udpgw https://alist.cloudservertech.my.id/d/Onedrive/Files/Autoscript%20Modded%20By%20Malayaacx01%20-%20VPN/badvpn-udpgw && chmod +x  /usr/bin/badvpn-udpgw
 #system badvpn 7300
-wget -O /etc/systemd/system/svr-7300.service https://github.com/andristji/Xray-SSH/main/badvpn/svr-7300.service && chmod +x  /etc/systemd/system/svr-7300.service
+wget -O /etc/systemd/system/svr-7300.service https://alist.cloudservertech.my.id/d/Onedrive/Files/Autoscript%20Modded%20By%20Malayaacx01%20-%20VPN/svr-7300.service && chmod +x  /etc/systemd/system/svr-7300.service
 #system badvpn 7200
-wget -O /etc/systemd/system/svr-7200.service https://github.com/andristji/Xray-SSH/main/badvpn/svr-7200.service && chmod +x  /etc/systemd/system/svr-7200.service
+wget -O /etc/systemd/system/svr-7200.service https://alist.cloudservertech.my.id/d/Onedrive/Files/Autoscript%20Modded%20By%20Malayaacx01%20-%20VPN/svr-7200.service && chmod +x  /etc/systemd/system/svr-7200.service
 #system badvpn 7100
-wget -O /etc/systemd/system/svr-7100.service https://github.com/andristji/Xray-SSH/main/badvpn/svr-7100.service && chmod +x  /etc/systemd/system/svr-7100.service
+wget -O /etc/systemd/system/svr-7100.service https://alist.cloudservertech.my.id/d/Onedrive/Files/Autoscript%20Modded%20By%20Malayaacx01%20-%20VPN/svr-7100.service && chmod +x  /etc/systemd/system/svr-7100.service
 
 #reboot system 7100
 systemctl daemon-reload
@@ -264,7 +264,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 
 
 #install bbr dan optimasi kernel
-#wget https://alist.cloudservertech.my.id/d/Onedrive/Files/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#wget https://alist.cloudservertech.my.id/d/Onedrive/Files/Autoscript%20Modded%20By%20Malayaacx01%20-%20VPN/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
