@@ -108,7 +108,7 @@ if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 CEKEXPIRED
 else
-echo "Akses di tolak!! Benget sia hurung!!";
+echo "Permission Denied!! Please Contact Admin To Access VPS Register IP!!";
 exit 0
 fi
 
